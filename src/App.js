@@ -16,7 +16,34 @@ import NotFound from './components/pages/NotFound';
 
 
 function App() {
+  const adminUser = {
+    email: "admin@admin.com",
+    password: "admin123"
+  };
+
   const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState({name:"", email: ""});
+  const [error, setError] = useState("");
+
+  const Login = details => {
+    console.log(details);
+
+    if(details.email === adminUser.email && details.password === adminUser.password) {
+      console.log("Logged in");
+      setLoggedIn(true);
+      setUser({
+        name: details.name,
+        email: details.email
+      });
+      setError("");
+    } else {
+      console.log("Details do not match!");
+      setError("Details do not match!");
+    }
+  }
+
+  if(!loggedIn && user.name !== "") setUser({name:"", email: ""});
+
   return (
     <Router>
       <NavBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
@@ -26,7 +53,7 @@ function App() {
         <Route path='/books' exact component={Books} />
         <Route path='/contact-us' exact component={ContactUs} />
         <Route path='/account' exact component={Account} />
-        <Route path='/sign-in' exact component={SignIn} />
+        <Route path='/sign-in' exact render={(props) => <SignIn {...props} Login={Login} error={error} loggedIn={loggedIn} />} />
         <Route path='/search-books' exact component={SearchBooks} />
         <Route path='/current-books' exact component={CurrentBooks} />
         <Route path='/favorite-books' exact component={FavoriteBooks} />
