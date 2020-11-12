@@ -13,6 +13,7 @@ import FavoriteBooks from './components/pages/FavoriteBooks';
 import Profile from './components/pages/Profile';
 import Membership from './components/pages/Membership';
 import NotFound from './components/pages/NotFound';
+// import Book from './Components/pages/Book';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
     password: "admin123"
   };
 
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [user, setUser] = useState({name:"", email: ""});
   const [error, setError] = useState("");
 

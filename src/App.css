@@ -19,7 +19,7 @@ input, button {
   justify-content: center;
 } */
 
-.home,
+/* .home, */
 .books,
 .contact-us,
 .account,
@@ -106,4 +106,8 @@ form .form-inner input[type='submit'] {
 
 form .form-inner input[type='submit']:hover {
   background-color: #69a3e0;
+}
+
+.homepagediv {
+  margin-top: 0%;
 }
