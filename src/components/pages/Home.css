@@ -1,0 +1,12 @@
+.homepagediv {
+    /* margin-top: 0%; */
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.recommenderdiv {
+    display: flex;
+    justify-content: center;
+}
