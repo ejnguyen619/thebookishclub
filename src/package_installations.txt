@@ -1,0 +1,1 @@
+mongoimport --uri "mongodb+srv://thebookishclub7:cmpe280project@bookishclubcluster.yclum.mongodb.net/BookishClubDB?retryWrites=true&w=majority" --collection myData --drop --file backend/src/books.csv --type csv --headerline
