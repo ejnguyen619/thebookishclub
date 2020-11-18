@@ -92,6 +92,24 @@ form .form-inner .form-group input {
   transition: 0.4s;
 }
 
+form .form-inner .form-group select {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
+form .form-inner .form-group textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
 form .form-inner input[type='submit'] {
   display: inline-block;
   padding: 10px 20px;
