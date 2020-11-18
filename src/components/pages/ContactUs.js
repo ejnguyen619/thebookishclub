@@ -32,7 +32,7 @@ export default function ContactUs() {
                 onChange={e => setDetails({...details, message: e.target.value})} value={details.message} >
               </textarea>
             </div>
-            <input type='submit' value='SEARCH' />
+            <input type='submit' value='SUBMIT' />
             {formsubmit && <h1 style={{color:'red'}}>Form submitted!</h1>}
           </div>
         </form>
