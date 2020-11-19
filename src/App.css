@@ -129,3 +129,8 @@ form .form-inner input[type='submit']:hover {
 .homepagediv {
   margin-top: 0%;
 }
+
+img {
+  height: 50px;
+  width: 50px;
+}
