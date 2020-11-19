@@ -37,6 +37,10 @@ input, button {
   /* font-size: 3rem; */
 }
 
+.books, .account {
+  height: 30vh;
+}
+
 form {
   display: block;
   position: relative;
