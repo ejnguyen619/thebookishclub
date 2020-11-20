@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 import React, { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
@@ -6,12 +7,14 @@ import Books from './components/pages/Books';
 import ContactUs from './components/pages/ContactUs';
 import Account from './components/pages/Account';
 import SignIn from './components/pages/SignIn';
+import SignUp from './components/pages/Signup';
 import Home from './components/pages/Home';
 import SearchBooks from './components/pages/SearchBooks';
 import CurrentBooks from './components/pages/CurrentBooks';
 import FavoriteBooks from './components/pages/FavoriteBooks';
 import Profile from './components/pages/Profile';
 import Membership from './components/pages/Membership';
+import SearchResults from './components/pages/SearchResults';
 import NotFound from './components/pages/NotFound';
 // import Book from './Components/pages/Book';
 
@@ -55,11 +58,13 @@ function App() {
         <Route path='/contact-us' exact component={ContactUs} />
         <Route path='/account' exact component={Account} />
         <Route path='/sign-in' exact render={(props) => <SignIn {...props} Login={Login} error={error} loggedIn={loggedIn} />} />
+        <Route path='/sign-up' exact render={(props) => <SignUp {...props} Login={Login} error={error} loggedIn={loggedIn} />} />
         <Route path='/search-books' exact component={SearchBooks} />
         <Route path='/current-books' exact component={CurrentBooks} />
         <Route path='/favorite-books' exact component={FavoriteBooks} />
         <Route path='/profile' exact render={() => <Profile user={user} setUser={setUser} /> } />
         <Route path='/membership' exact component={Membership} />
+        <Route path='/search-results' exact component={SearchResults} />
         <Route component={NotFound} />
       </Switch>
       </div>

@@ -3,7 +3,7 @@ import '../../App.css';
 
 export default function Profile({user, setUser}) {
     console.log(user);
-    const [details, setDetails] = useState({name: user.name, email: user.email, password: "Password", src:""});
+    const [details, setDetails] = useState({name: user.name, email: user.email, address: "", organization: "", src:""});
 
     const submitHandler = e => {
       e.preventDefault();
@@ -38,9 +38,14 @@ export default function Profile({user, setUser}) {
               onChange={e => setDetails({...details, email: e.target.value})} value={details.email}/>
           </div>
           <div className='form-group'>
-            <label htmlFor="password">Password: </label>
-            <input type="password" name="password" id='password'
-              onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
+            <label htmlFor="address">Address: </label>
+            <input type="address" name="address" id='address'
+              onChange={e => setDetails({...details, address: e.target.value})} value={details.address}/>
+          </div>
+          <div className='form-group'>
+            <label htmlFor="organization">Organization: </label>
+            <input type="organization" name="organization" id='organization'
+              onChange={e => setDetails({...details, organization: e.target.value})} value={details.organization}/>
           </div>
           <input type='submit' value='UPDATE' />
         </div>
