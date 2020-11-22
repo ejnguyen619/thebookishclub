@@ -28,7 +28,7 @@ input, button {
 .current-books,
 .favorite-books,
 .profile,
-.membership,
+/* .membership, */
 .not-found {
   display: flex;
   height: 90vh;

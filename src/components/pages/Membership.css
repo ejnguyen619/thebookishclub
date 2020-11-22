@@ -1,0 +1,16 @@
+.Membership {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+.membership-header {
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
