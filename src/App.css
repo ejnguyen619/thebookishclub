@@ -29,12 +29,17 @@ input, button {
 .favorite-books,
 .profile,
 /* .membership, */
+.search-results,
 .not-found {
   display: flex;
-  height: 90vh;
+  height: 110vh;
   align-items: center;
   justify-content: center;
   /* font-size: 3rem; */
+}
+
+.books, .account {
+  height: 30vh;
 }
 
 form {
@@ -120,6 +125,7 @@ form .form-inner input[type='submit'] {
   color: #fff;
   font-weight: 700;
   cursor: pointer;
+  margin-right: 50px;
 }
 
 form .form-inner input[type='submit']:hover {
@@ -128,4 +134,9 @@ form .form-inner input[type='submit']:hover {
 
 .homepagediv {
   margin-top: 0%;
+}
+
+img {
+  height: 50px;
+  width: 50px;
 }

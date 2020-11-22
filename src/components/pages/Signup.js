@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../../App.css';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-export default function SignIn({Login, error, loggedIn}) {
-    const [details, setDetails] = useState({name: "", email: "", password: ""});
+export default function SignUp({Login, error, loggedIn}) {
+    const [details, setDetails] = useState({name: "", email: "", password: "", confirm: ""});
 
     const submitHandler = e => {
       e.preventDefault();
@@ -16,7 +16,7 @@ export default function SignIn({Login, error, loggedIn}) {
       <>
       <form className='sign-in' onSubmit={submitHandler}>
         <div className='form-inner'>
-          <h2>Login</h2>
+          <h2>Sign Up</h2>
           {(error !== "" ? (<div className="error">{error}</div>) : "")}
           <div className='form-group'>
             <label htmlFor="name">Name: </label>
@@ -33,8 +33,12 @@ export default function SignIn({Login, error, loggedIn}) {
             <input type="password" name="password" id='password'
               onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
           </div>
-          <input type='submit' value='LOGIN' />
-          <Link to='/sign-up'>Create New Account</Link>
+          <div className='form-group'>
+            <label htmlFor="confirm-password">Confirm Password: </label>
+            <input type="confirm-password" name="confirm-password" id='confirm-password'
+              onChange={e => setDetails({...details, confirm: e.target.value})} value={details.confirm}/>
+          </div>
+          <input type='submit' value='SIGN UP' />
         </div>
       </form>
       </>
