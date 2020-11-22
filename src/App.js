@@ -64,7 +64,8 @@ function App() {
         <Route path='/favorite-books' exact component={FavoriteBooks} />
         <Route path='/profile' exact render={() => <Profile user={user} setUser={setUser} /> } />
         <Route path='/membership' exact component={Membership} />
-        <Route path='/search-results' exact component={SearchResults} />
+        <Route path='/search/name/:bookName' exact component={SearchResults} />
+        <Route path='/search/author/:authorName' exact component={SearchResults} />
         <Route component={NotFound} />
       </Switch>
       </div>
