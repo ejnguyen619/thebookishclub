@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import '../../App.css';
 import './SearchResults.css';
 
@@ -7,7 +8,8 @@ export default function SearchResults({match}) {
     const [bookResult, setBookResult] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [err, setErr] = useState(null);
-    console.log(name);
+    const [book, Setbook] = useState(false);
+    var bookInfo = {};
 
     useEffect(() => {
       const fetchData = async () => {
@@ -38,15 +40,20 @@ export default function SearchResults({match}) {
     };
 
     function handleEntry(id) {
-      console.log(id);
       var index = bookResult.findIndex((element) => element.id === id);
-      console.log(bookResult[index]);
+      bookInfo = bookResult[index];
+      console.log(bookInfo);
+      localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
+      localStorage.setItem('prevLink', window.location.pathname);
+      Setbook(true);
     }
 
     if (err) {
       return <div className='search-results'><h1>{err.message}</h1></div>
     } else if (!isLoaded) {
       return <div className='search-results'><h1>Loading...</h1></div>
+    } else if (book) {
+      return <Redirect to="/booking" />
     } else {
         return (
           <>

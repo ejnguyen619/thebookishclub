@@ -15,6 +15,7 @@ import FavoriteBooks from './components/pages/FavoriteBooks';
 import Profile from './components/pages/Profile';
 import Membership from './components/pages/Membership';
 import SearchResults from './components/pages/SearchResults';
+import Booking from './components/pages/Booking';
 import NotFound from './components/pages/NotFound';
 // import Book from './Components/pages/Book';
 
@@ -66,6 +67,7 @@ function App() {
         <Route path='/membership' exact component={Membership} />
         <Route path='/search/name/:bookName' exact component={SearchResults} />
         <Route path='/search/author/:authorName' exact component={SearchResults} />
+        <Route path='/booking' exact render={(props) => <Booking {...props}/>} />
         <Route component={NotFound} />
       </Switch>
       </div>
