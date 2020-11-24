@@ -6,7 +6,7 @@
   }
 
 input, button {
-  appearance: none;
+  /* appearance: none; */
   background: none;
   border: none;
   outline: none;
@@ -30,6 +30,7 @@ input, button {
 .profile,
 /* .membership, */
 .search-results,
+/* .booking, */
 .not-found {
   display: flex;
   height: 110vh;
