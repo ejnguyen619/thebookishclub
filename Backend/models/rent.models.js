@@ -1,15 +1,13 @@
 module.exports = mongoose => {
     var schema = mongoose.Schema(
       {
-        user_id: Number,
-        books_rented_count: Number,
+        email: String,
+        books_count: Number,
         books_rented_details: [{
             book_id: Number,
             title: String
         }],
-        rented_count: Number,
-        non_rented_count: Number,
-        total_count: Number
+        user_books_rented_count: Number
       },
       { timestamps: true }
     );

@@ -1,11 +1,6 @@
 const db = require("../models");
 const Books = db.books;
 
-// // Create and Save a new Tutorial
-// exports.create = (req, res) => {
-  
-// };
-
 // Retrieve all Books from the database based on title.
 exports.findAllByTitle = (req, res) => {
     const title = req.query.title;

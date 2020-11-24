@@ -1,10 +1,11 @@
 const db = require("../models");
-const Books = db.books;
+const User = db.users;
 
-// // Create and Save a new Tutorial
+// // Create and Save a new User
 exports.create = (req, res) => {
+    console.log(req.body);
     // Validate request
-    if (!req.body.title) {
+    if (!req.body.email) {
       res.status(400).send({ message: "Content can not be empty!" });
       return;
     }
@@ -12,16 +13,17 @@ exports.create = (req, res) => {
     // Create a User
     const user = new User({
       email: req.body.email,
-      password: password,
-      name: req.body.name,
-      address: req.body.address,
-      image_url: req.body.image_url
+      password: req.body.password,
+      name: req.body.name
+      // address: req.body.address,
+      // image_url: req.body.image_url
     });
   
-    // Save Tutorial in the database
-    tutorial
-      .save(tutorial)
+    // Save user in the database
+    user
+      .save(user)
       .then(data => {
+        console.log(res);
         res.send(data);
       })
       .catch(err => {
@@ -31,66 +33,3 @@ exports.create = (req, res) => {
         });
       });
   };
-
-// Retrieve all Books from the database based on title.
-exports.findAllByTitle = (req, res) => {
-    const title = req.query.title;
-    var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
-    // console.log(condition);
-
-    Books.find(condition)
-      .then(data => {
-        console.log(res);
-        res.send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while retrieving books."
-        });
-      });
-};
-
-// Retrieve all Books from the database based on title.
-exports.findAllByAuthor = (req, res) => {
-  const authors = req.query.authors;
-  var condition = authors ? { authors: { $regex: new RegExp(authors), $options: "i" } } : {};
-  // console.log(condition);
-
-  Books.find(condition)
-    .then(data => {
-      console.log(res);
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving books."
-      });
-    });
-};
-
-// // Find a single Tutorial with an id
-// exports.findOne = (req, res) => {
-  
-// };
-
-// // Update a Tutorial by the id in the request
-// exports.update = (req, res) => {
-  
-// };
-
-// // Delete a Tutorial with the specified id in the request
-// exports.delete = (req, res) => {
-  
-// };
-
-// // Delete all Tutorials from the database.
-// exports.deleteAll = (req, res) => {
-  
-// };
-
-// // Find all published Tutorials
-// exports.findAllPublished = (req, res) => {
-  
-// };

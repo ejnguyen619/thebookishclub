@@ -37,3 +37,11 @@ button:hover {
 .detail-name {
     font-weight: bold;
 }
+
+.bestSellerBtn {
+    background: #797777;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }

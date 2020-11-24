@@ -53,7 +53,7 @@ class Book extends React.Component {
     render() {
         let { error, isLoaded, items, rank } = this.state;
         if (error || !items[rank]) {
-          return <button className="" onClick={this.handleGetRandomRank}>Give me a Best Seller</button>
+          return <button className="bestSellerBtn" onClick={this.handleGetRandomRank}>See a Best Seller</button>
   
         } 
         else if (!isLoaded) {
@@ -61,13 +61,13 @@ class Book extends React.Component {
         }
         //if user is first landing on the page, only display button 
         else if (!rank) {
-          return <button className="" onClick={this.handleGetRandomRank}>Give me a Best Seller</button>
+          return <button className="bestSellerBtn" onClick={this.handleGetRandomRank}>See a Best Seller</button>
         }
         else {
           return (
             <div className="content">
               <div>
-                <button className="" onClick={this.handleGetRandomRank}>Give me a Best Seller</button>
+                <button className="bestSellerBtn" onClick={this.handleGetRandomRank}>See a Best Seller</button>
               </div>
               <div className="bookCoverStyling">
                 <img src={items[rank].book_image} alt="Book cover"/>
