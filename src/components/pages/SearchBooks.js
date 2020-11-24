@@ -7,53 +7,65 @@ import { Redirect } from 'react-router-dom';
 export default function SearchBooks() {
 
   const [bookName, setbookName] = useState("");
-  const [error, setError] = useState("");
+  const [authorName, setauthorName] = useState("");
   const [result, setResult] = useState(false);
-  const [data, setData] = useState({});
 
-  function openSearch() {
-    document.getElementById("myOverlay").style.display = "block";
+  function openSearchName() {
+    document.getElementById("myOverlayName").style.display = "block";
   }
   
   // Close the full screen search box
-  function closeSearch() {
-    document.getElementById("myOverlay").style.display = "none";
+  function closeSearchName() {
+    document.getElementById("myOverlayName").style.display = "none";
   }
 
-  const submitHandler = e => {
+  function openSearchAuthor() {
+    document.getElementById("myOverlayAuthor").style.display = "block";
+  }
+  
+  // Close the full screen search box
+  function closeSearchAuthor() {
+    document.getElementById("myOverlayAuthor").style.display = "none";
+  }
+
+  const submitHandlerName = e => {
     e.preventDefault();
     console.log(bookName);
-    const fetchData = async () => {
-      const result = await fetch(`/api/books/findBooksByTitle?title=${bookName}`);
-      const body = await result.json();
-      console.log(body);
-      console.log(body.length);
-      setData(body);
-      console.log(data);
-      if(body.length !== 0) {
-        setError("");
-        setbookName("");
-        setResult(true);
-      }
-      else setError("Book not found. Try again.")
-    };
-    fetchData();
+    setResult(true);
   }
 
-  if(result) return <Redirect to="/search-results" />
+  const submitHandlerAuthor = e => {
+    e.preventDefault();
+    console.log(authorName);
+    setResult(true);
+  }
+
+  if(result && bookName !== "") return <Redirect to={`/search/name/${bookName}`} />
+  if(result && authorName !== "") return <Redirect to={`/search/author/${authorName}`} />
 
     return (
       <>
       <h1 className='search-books'>ONLINE LIBRARY</h1>
+
       <div className='searchdiv'>
-      <button className="openBtn" onClick={openSearch}>Search a Book</button>
+      <button className="openBtn" onClick={openSearchName}>Search By Name</button>
       </div>
-      <div id="myOverlay" className="overlay">
-      <span className="closebtn" onClick={closeSearch} title="Close Overlay">x</span>
+      <div id="myOverlayName" className="overlay">
+      <span className="closebtn" onClick={closeSearchName} title="Close Overlay">x</span>
       <div className="overlay-content">
-      {(error !== "" ? (<div className="error" style={{color: "#fff"}}>{error}</div>) : "")}
       <input type="text" placeholder="Search.." name="search" onChange={e => setbookName(e.target.value)} value={bookName}/>
-      <button type="submit" onClick={submitHandler}><i className="fa fa-search"></i></button>
+      <button type="submit" onClick={submitHandlerName}><i className="fa fa-search"></i></button>
+      </div>
+
+      </div>
+      <div className='searchdiv'>
+      <button className="openBtn" onClick={openSearchAuthor}>Search By Author</button>
+      </div>
+      <div id="myOverlayAuthor" className="overlay">
+      <span className="closebtn" onClick={closeSearchAuthor} title="Close Overlay">x</span>
+      <div className="overlay-content">
+      <input type="text" placeholder="Search.." name="search" onChange={e => setauthorName(e.target.value)} value={authorName}/>
+      <button type="submit" onClick={submitHandlerAuthor}><i className="fa fa-search"></i></button>
       </div>
       </div>
 
