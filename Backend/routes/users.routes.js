@@ -8,6 +8,9 @@ module.exports = app => {
 
     // Update an existing user based on email
     router.put("/updateUser/:id", users.updateUser);
+
+    // Get User Info
+    router.get("/", users.getUserInfo);
   
     app.use('/api/users', router);
   };

@@ -60,3 +60,23 @@ exports.updateUser = (req, res) => {
       });
     });
 };
+
+exports.getUserInfo = (req, res) => {
+  const name = req.query.name;
+  const email = req.query.email;
+  const password = req.query.password;
+  var query = {name: name, email: email, password: password};
+
+  User
+    .find(query)
+    .then(data => {
+      console.log(res);
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving books."
+      });
+    });
+};
