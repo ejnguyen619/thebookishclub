@@ -22,9 +22,9 @@ export default function Booking() {
     return (
       <>
         <div className="row">
-          <div className="column">
+          <div className="columnBookDetail">
             <div>
-              <img src={bookInfo.small_image_url} alt="book cover" />
+              <img src={bookInfo.image_url} alt="book cover" />
             </div>
             <div>
               <h3><strong>Title:</strong> {bookInfo.original_title}</h3>

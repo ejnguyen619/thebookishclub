@@ -11,5 +11,6 @@ db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.books = require("./books.models.js")(mongoose);
 db.users = require("./users.models.js")(mongoose);
+db.orders = require("./orders.models.js")(mongoose);
 
 module.exports = db;

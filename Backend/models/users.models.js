@@ -1,28 +1,14 @@
-// var mongoose = require('mongoose');
-// var userSchema = new mongoose.Schema(
-//   {
-//   email: String,
-//   password: String,
-//   name: String,
-//   // address: String,
-//   // organization: String,
-//   // image_url: String
-//   },
-//   { timestamps: true }
-// );
-
-// UserModel = mongoose.model('users', userSchema);
-// return UserModel;
+var uniqueValidator = require('mongoose-unique-validator');
 
 module.exports = mongoose => {
     var schema = mongoose.Schema(
       {
-        email: String,
+        email: {type: String, lowercase: true, unique: true, required: [true, "can't be blank"], match: [/\S+@\S+\.\S+/, 'is invalid'], index: true},
         password: String,
-        name: String
-        // address: String,
-        // organization: String,
-        // image_url: String
+        name: String,
+        address: String,
+        organization: String,
+        image_url: String
       },
       { timestamps: true }
     );
@@ -32,7 +18,8 @@ module.exports = mongoose => {
       object.id = _id;
       return object;
   });
-      
+
+    schema.plugin(uniqueValidator, {message: 'is already taken.'});  
     const Users = mongoose.model("users", schema);
     return Users;
 };
