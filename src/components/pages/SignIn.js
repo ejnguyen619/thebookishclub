@@ -1,14 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../App.css';
 import { Link, Redirect } from 'react-router-dom';
 
-export default function SignIn({Login, error, loggedIn}) {
+export default function SignIn({Login, error, loggedIn, authLogin}) {
     const [details, setDetails] = useState({name: "", email: "", password: ""});
+    const [submitForm, setSubmitForm] = useState(0);
 
     const submitHandler = e => {
       e.preventDefault();
       Login(details);
+      setSubmitForm(submitForm + 1);
     }
+
+    useEffect(() => {
+      const fetchData = async () => {
+        await fetch(`/api/users?email=${details.email}&password=${details.password}&name=${details.name}`)
+          .then(res => {
+            if (res.status >= 400) {
+              throw new Error("Server responds with error!")
+            }
+            return res.json()
+          })
+          .then(userInfo => {
+            if(userInfo.length !== 0) authLogin(true);
+            else if(submitForm > 0) authLogin(false);
+          })
+      };
+    fetchData();
+    // eslint-disable-next-line
+    }, [submitForm]);
 
     if(error === "" && loggedIn) return <Redirect to="/" />
 
@@ -17,7 +37,7 @@ export default function SignIn({Login, error, loggedIn}) {
       <form className='sign-in' onSubmit={submitHandler}>
         <div className='form-inner'>
           <h2>Login</h2>
-          {(error !== "" ? (<div className="error">{error}</div>) : "")}
+          {(error !== "" && submitForm !== 0 && !loggedIn ? (<div className="error">{error}</div>) : "")}
           <div className='form-group'>
             <label htmlFor="name">Name: </label>
             <input type="text" name="name" id='name' 
