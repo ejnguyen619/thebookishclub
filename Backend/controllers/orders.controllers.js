@@ -29,6 +29,7 @@ exports.createNewOrder = (req, res) => {
             book_id: book_id,
             email: email,
             title: title,
+            name: req.body.name,
             deliveryType: req.body.deliveryType,
             addressLine1: req.body.addressLine1,
             addressLine2: req.body.addressLine2
@@ -40,6 +41,7 @@ exports.createNewOrder = (req, res) => {
             book_id: book_id,
             email: email,
             title: title,
+            name: req.body.name,
             deliveryType: req.body.deliveryType
         });
     }
@@ -60,20 +62,6 @@ exports.createNewOrder = (req, res) => {
             err.message || "Some error occurred while creating the Order."
         });
     });
-      
-    // Book.findOne( {"book_id": book_id} )
-    //     .then(data => {
-    //         if (!data)
-    //             res.status(404).send({ message: "Not found Book with id " + book_id });
-    //         else 
-    //             books_count = data.books_count;
-    //             console.log("book count: ", data.books_count);
-    //     })
-    //     .catch(err => {
-    //         res
-    //           .status(500)
-    //           .send({ message: "Error retrieving Book with id=" + book_id });
-    // });
 
     Book.findOneAndUpdate({ book_id: book_id },  
         { $inc: { books_count: -1}}, {new: true}, function (err, docs) { 
@@ -86,3 +74,4 @@ exports.createNewOrder = (req, res) => {
     }); 
     
 };
+

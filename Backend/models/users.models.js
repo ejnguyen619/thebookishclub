@@ -8,7 +8,10 @@ module.exports = mongoose => {
         name: String,
         address: String,
         organization: String,
-        image_url: String
+        image_url: String,
+        memberShip: {type: Boolean, default: false},
+        memberShipStartDate: Date,
+        memberShipEndDate: Date
       },
       { timestamps: true }
     );

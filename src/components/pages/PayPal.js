@@ -14,7 +14,7 @@ export default function Paypal() {
                 description: "Cool looking table",
                 amount: {
                   currency_code: "USD",
-                  value: 50.0,
+                  value: 20.0,
                 },
               },
             ],
@@ -23,6 +23,7 @@ export default function Paypal() {
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
           console.log(order);
+          alert('Your payment was successful!')
         },
         onError: (err) => {
           console.log(err);

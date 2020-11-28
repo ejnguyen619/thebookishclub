@@ -80,3 +80,32 @@ exports.getUserInfo = (req, res) => {
       });
     });
 };
+
+exports.updateUserMembership = (req, res) => { 
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Data to update can not be empty!"
+    });
+  }
+  const id = req.params.id;
+  var memberShip = true;
+  var memberShipStartDate = new Date();
+  var memberShipEndDate = new Date();
+  memberShipEndDate.setFullYear(memberShipStartDate.getFullYear()+1);
+  // Update membership status in the database
+
+  User.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then(data => {
+      if (!data) {
+        res.status(404).send({
+          message: `Cannot update User with id=${id}. Maybe User was not found!`
+        });
+      } else res.send({ message: "User data was updated successfully." });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({
+        message: "Error updating User with id=" + id
+      });
+    });
+};

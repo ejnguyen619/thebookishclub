@@ -10,8 +10,8 @@ export const BookMenuItems = [
     cName: 'dropdown-link'
   },
   {
-    title: 'Favorite Books',
-    path: '/favorite-books',
+    title: 'Borrowed Books',
+    path: '/borrowed-books',
     cName: 'dropdown-link'
   }
 ]

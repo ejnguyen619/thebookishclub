@@ -11,7 +11,7 @@ import SignUp from './components/pages/Signup';
 import Home from './components/pages/Home';
 import SearchBooks from './components/pages/SearchBooks';
 import CurrentBooks from './components/pages/CurrentBooks';
-import FavoriteBooks from './components/pages/FavoriteBooks';
+import BorrowedBooks from './components/pages/BorrowedBooks';
 import Profile from './components/pages/Profile';
 import Membership from './components/pages/Membership';
 import SearchResults from './components/pages/SearchResults';
@@ -56,7 +56,7 @@ function App() {
         <Route path='/sign-up' exact render={(props) => <SignUp {...props} Login={Login} error={error} loggedIn={loggedIn} />} />
         <Route path='/search-books' exact component={SearchBooks} />
         <Route path='/current-books' exact component={CurrentBooks} />
-        <Route path='/favorite-books' exact component={FavoriteBooks} />
+        <Route path='/borrowed-books' exact component={BorrowedBooks} />
         <Route path='/profile' exact render={() => <Profile user={user} setUser={setUser} /> } />
         <Route path='/membership' exact component={Membership} />
         <Route path='/search/name/:bookName' exact component={SearchResults} />
