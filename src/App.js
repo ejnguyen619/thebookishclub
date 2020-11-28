@@ -17,33 +17,27 @@ import Membership from './components/pages/Membership';
 import SearchResults from './components/pages/SearchResults';
 import Booking from './components/pages/Booking';
 import NotFound from './components/pages/NotFound';
-// import Book from './Components/pages/Book';
-
 
 function App() {
-  const adminUser = {
-    email: "admin@admin.com",
-    password: "admin123"
-  };
-
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({name:"", email: ""});
   const [error, setError] = useState("");
 
   const Login = details => {
     console.log(details);
 
-    if(details.email === adminUser.email && details.password === adminUser.password) {
-      console.log("Logged in");
+    setUser({
+      name: details.name,
+      email: details.email
+    });
+  }
+
+  function authLogin(bool) {
+    if(bool) {
       setLoggedIn(true);
-      setUser({
-        name: details.name,
-        email: details.email
-      });
       setError("");
     } else {
-      console.log("Details do not match!");
-      setError("Details do not match!");
+      setError("Invalid Information! Try again");
     }
   }
 
@@ -58,7 +52,7 @@ function App() {
         <Route path='/books' exact component={Books} />
         <Route path='/contact-us' exact component={ContactUs} />
         <Route path='/account' exact component={Account} />
-        <Route path='/sign-in' exact render={(props) => <SignIn {...props} Login={Login} error={error} loggedIn={loggedIn} />} />
+        <Route path='/sign-in' exact render={(props) => <SignIn {...props} Login={Login} error={error} loggedIn={loggedIn} authLogin={authLogin} />} />
         <Route path='/sign-up' exact render={(props) => <SignUp {...props} Login={Login} error={error} loggedIn={loggedIn} />} />
         <Route path='/search-books' exact component={SearchBooks} />
         <Route path='/current-books' exact component={CurrentBooks} />

@@ -22,3 +22,7 @@ h2 {
     min-width: 600px;
     padding: 25px;
 }
+
+li:hover {
+    color: blue;
+}
