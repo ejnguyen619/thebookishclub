@@ -22,7 +22,11 @@ export default function SignIn({Login, error, loggedIn, authLogin}) {
             return res.json()
           })
           .then(userInfo => {
-            if(userInfo.length !== 0) authLogin(true);
+            if(userInfo.length !== 0) {
+              if(localStorage.getItem('userId') !== null) localStorage.removeItem("userId");
+              localStorage.setItem('userId', userInfo[0].id);
+              authLogin(true);
+            }
             else if(submitForm > 0) authLogin(false);
           })
       };

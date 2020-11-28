@@ -62,23 +62,57 @@ exports.updateUser = (req, res) => {
 };
 
 exports.getUserInfo = (req, res) => {
-  const name = req.query.name;
-  const email = req.query.email;
-  const password = req.query.password;
-  var query = {name: name, email: email, password: password};
-
+  // const name = req.query.name;
+  // const email = req.query.email;
+  // const password = req.query.password;
+  // console.log("Name:" + name);
+  // console.log("Email:" + email);
+  // console.log("Password:" + password);
+  // var query = {name: name, email: email, password: password};
+  // console.log(query);
+  var query = createQuery(req);
+  if(query.id == undefined)
   User
     .find(query)
     .then(data => {
       console.log(res);
+      //console.log(data);
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving books."
+          err.message || "Some error occurred while retrieving User."
       });
     });
+  else
+  User
+    .findById(query.id)
+    .then(data => {
+      console.log(res);
+      //console.log(data);
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving User."
+      });
+    });
+};
+
+const createQuery = req => {
+  var query = {};
+  const name = (req.query.name != undefined) ? req.query.name : " ";
+  const email = (req.query.email != undefined) ? req.query.email : " ";
+  const password = (req.query.password != undefined) ? req.query.password : " ";
+  const id = (req.query.id != undefined) ? req.query.id : " ";
+  if(name != " ") query["name"] = name;
+  if(email != " ") query["email"] = email;
+  if(password != " ") query["password"] = password;
+  if(id != " ") query["id"] = id;
+  //console.log(query);
+  return query;
 };
 
 exports.updateUserMembership = (req, res) => { 

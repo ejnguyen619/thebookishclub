@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import '../../App.css';
 
 export default function Profile({user, setUser}) {
-    console.log(user);
-    const [details, setDetails] = useState({name: user.name, email: user.email, address: "", organization: "", src:""});
+    const id = localStorage.getItem('userId');
+    console.log(id);
+
+    const [details, setDetails] = useState({name: "", email: "", address: "", organization: "", src:""});
 
     const submitHandler = e => {
       e.preventDefault();

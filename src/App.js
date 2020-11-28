@@ -20,16 +20,15 @@ import NotFound from './components/pages/NotFound';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [user, setUser] = useState({name:"", email: ""});
+  const [user, setUser] = useState({name:"", email: "", id: ""});
   const [error, setError] = useState("");
 
   const Login = details => {
-    console.log(details);
+    if(localStorage.getItem('userName') !== null) localStorage.removeItem("userName");
+    if(localStorage.getItem('userEmail') !== null) localStorage.removeItem("userEmail");
 
-    setUser({
-      name: details.name,
-      email: details.email
-    });
+    localStorage.setItem('userName', details.name);
+    localStorage.setItem('userEmail', details.email);
   }
 
   function authLogin(bool) {
@@ -41,7 +40,7 @@ function App() {
     }
   }
 
-  if(!loggedIn && user.name !== "") setUser({name:"", email: ""});
+  if(!loggedIn && user.name !== "") setUser({name:"", email: "", id: ""});
 
   return (
     <Router>
