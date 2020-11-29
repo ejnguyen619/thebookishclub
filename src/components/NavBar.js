@@ -10,6 +10,8 @@ function NavBar({loggedIn, setLoggedIn}) {
   const [bookdropdown, setBookDropdown] = useState(false);
   const [accountdropdown, setAccountDropdown] = useState(false);
 
+  if(localStorage.getItem('userId') !== null) setLoggedIn(true);
+
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
