@@ -17,6 +17,7 @@ import Membership from './components/pages/Membership';
 import SearchResults from './components/pages/SearchResults';
 import Booking from './components/pages/Booking';
 import NotFound from './components/pages/NotFound';
+import {Helmet} from "react-helmet";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -46,6 +47,12 @@ function App() {
     <Router>
       <NavBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <div className='App'>
+      <Helmet>
+                <meta name="description" content="TheBookishClub online library has all the desired books that can be loaned 
+                from libraries close by.Pick up and drop services are available, saving time for the readers.A book reccomendation
+                system is also avaiable for the readers who are not sure on what to read." />
+                <title>TheBookishClub | Online Library</title>
+      </Helmet>
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/books' exact component={Books} />

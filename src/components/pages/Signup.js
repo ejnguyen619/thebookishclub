@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../App.css';
 import { Redirect } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 export default function SignUp() {
     const [details, setDetails] = useState({name: "", email: "", password: "", confirm: ""});
@@ -68,6 +69,11 @@ export default function SignUp() {
       <>
       <form className='sign-in' onSubmit={submitHandler}>
         <div className='form-inner'>
+        <Helmet>
+                <meta name="description" content="Membership
+				                                          For Students and Professionals"/>
+                <title>Register Today</title>
+        </Helmet>
           <h2>Sign Up</h2>
           {(error !== "" ? (<div className="error">{error}</div>) : "")}
           <div className='form-group'>

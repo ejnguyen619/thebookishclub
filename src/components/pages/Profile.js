@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
+import {Helmet} from "react-helmet";
 
 export default function Profile() {
     const userId = localStorage.getItem('userId');
@@ -74,6 +75,11 @@ export default function Profile() {
       <>
       <form className='profile' onSubmit={submitHandler}>
         <div className='form-inner'>
+        <Helmet>
+                <meta name="description" content="Profile
+				                                          Add your details and start borrowing books"/>
+                <title>User Profile</title>
+        </Helmet>
           {update && <h1 style={{textAlign: "center"}}>Profile has been updated.</h1>}
           {err !== null && <h1 style={{textAlign: "center"}}>{err}</h1>}
           <h2>About Me</h2>

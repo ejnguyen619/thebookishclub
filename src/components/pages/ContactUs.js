@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../App.css';
+import {Helmet} from "react-helmet";
 
 export default function ContactUs() {
     const [details, setDetails] = useState({name: "", email: "", message: ""});
@@ -15,6 +16,10 @@ export default function ContactUs() {
       <>
         <form className='contact-us' onSubmit={submitHandler}>
           <div className='form-inner'>
+          <Helmet>
+                <meta name="description" content="Question or Comments? Drop them to us"/>
+                <title>Reach Us</title>
+          </Helmet>
             <h1>Contact Us</h1>
             <div className='form-group'>
               <label htmlFor="name">Name: </label>

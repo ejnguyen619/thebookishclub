@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../../App.css';
 import './SearchBooks.css';
 import { Redirect } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 
 export default function SearchBooks() {
@@ -48,6 +49,11 @@ export default function SearchBooks() {
       <h1 className='search-books'>ONLINE LIBRARY</h1>
 
       <div className='searchdiv'>
+      <Helmet>
+                <meta name="description" content="Over 10,000 books
+                                                  Popular, Academic and Work Books" />
+                <title>Browse a book</title>
+      </Helmet>
       <button className="openBtn" onClick={openSearchName}>Search By Name</button>
       </div>
       <div id="myOverlayName" className="overlay">
