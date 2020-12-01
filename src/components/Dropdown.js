@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { BookMenuItems, AccountMenuItems } from './MenuItems';
 import { Link } from 'react-router-dom';
 import './Dropdown.css';
+import { useTranslation } from 'react-i18next';
 
 function Dropdown({tab, loggedIn}) {
+  const { t } = useTranslation();
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -15,7 +17,7 @@ function Dropdown({tab, loggedIn}) {
           return (
             <li key={index}>
               <Link className={item.cName} to={loggedIn ? item.path : '/sign-in'} onClick={() => setClick(false)}>
-                  {item.title}
+                {t(item.title)}
               </Link>
             </li>
           )

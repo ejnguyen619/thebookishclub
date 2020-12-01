@@ -4,8 +4,10 @@ import { SignOffButton } from './SignOffButton';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import Dropdown from './Dropdown';
+import { useTranslation } from 'react-i18next';
 
 function NavBar({loggedIn, setLoggedIn}) {
+  const { t } = useTranslation();
   const [click, setClick] = useState(false);
   const [bookdropdown, setBookDropdown] = useState(false);
   const [accountdropdown, setAccountDropdown] = useState(false);
@@ -37,7 +39,7 @@ function NavBar({loggedIn, setLoggedIn}) {
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              Home
+              {t("home")}
             </Link>
           </li>
           <li className='nav-item'
@@ -45,7 +47,7 @@ function NavBar({loggedIn, setLoggedIn}) {
             onMouseLeave={bookMouseLeave}
           >
             <Link to='/books' className='nav-links' onClick={closeMobileMenu}>
-              Books <i className='fas fa-caret-down' />
+            {t("books")} <i className='fas fa-caret-down' />
             </Link>
             {bookdropdown && <Dropdown tab='books' loggedIn={loggedIn}/>}
           </li>
@@ -54,25 +56,25 @@ function NavBar({loggedIn, setLoggedIn}) {
             onMouseLeave={accountMouseLeave}
           >
             <Link to='/account' className='nav-links' onClick={closeMobileMenu}>
-              Account <i className='fas fa-caret-down' />
+            {t("account")} <i className='fas fa-caret-down' />
             </Link>
             {accountdropdown && <Dropdown tab='account' loggedIn={loggedIn}/>}
           </li>
           <li className='nav-item'>
             <Link to='/contact-us' className='nav-links' onClick={closeMobileMenu}>
-              Contact Us
+            {t("contact_us")}
             </Link>
           </li>
           <li className='nav-item'>
             {!loggedIn && 
             <Link to='/sign-in' className='nav-links-mobile' 
               onClick={closeMobileMenu}>
-              Sign In
+              {t("sign_in")}
             </Link>}
             {loggedIn && 
             <Link to='/' className='nav-links-mobile' 
-            onClick={() => {closeMobileMenu();setLoggedIn(false);}}>
-              Sign Off
+            onClick={() => {closeMobileMenu();localStorage.removeItem("userName");localStorage.removeItem("userEmail");localStorage.removeItem("userId");setLoggedIn(false);}}>
+              {t("sign_off")}
             </Link>}
           </li>         
         </ul>
