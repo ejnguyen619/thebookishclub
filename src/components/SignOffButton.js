@@ -1,8 +1,10 @@
 import React from 'react';
 import './Button.css';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export function SignOffButton({setLoggedIn}) {
+  const { t } = useTranslation();
   const Logoff = () => {
     if(localStorage.getItem('userName') !== null) localStorage.removeItem("userName");
     if(localStorage.getItem('userEmail') !== null) localStorage.removeItem("userEmail");
@@ -12,7 +14,7 @@ export function SignOffButton({setLoggedIn}) {
   return (
     <Link to='/'>
       <button className='btn' onClick={Logoff}>
-        Sign Off
+        {t("sign_off")}
       </button>
     </Link>
   );

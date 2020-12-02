@@ -1,16 +1,16 @@
 export const BookMenuItems = [
   {
-    title: 'Search Books',
+    title: 'search_books',
     path: '/search-books',
     cName: 'dropdown-link'
   },
   {
-    title: 'Current Books',
+    title: 'current_books',
     path: '/current-books',
     cName: 'dropdown-link'
   },
   {
-    title: 'Borrowed Books',
+    title: 'borrowed_books',
     path: '/borrowed-books',
     cName: 'dropdown-link'
   }
@@ -18,13 +18,13 @@ export const BookMenuItems = [
 
 export const AccountMenuItems = [
   {
-    title: 'Profile',
+    title: 'profile',
     path: '/profile',
     cName: 'dropdown-link'
   },
   {
-    title: 'Membership',
+    title: 'membership',
     path: '/membership',
     cName: 'dropdown-link'
-  }
+  },
 ]

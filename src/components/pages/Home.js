@@ -2,12 +2,22 @@ import React from 'react';
 import '../../App.css';
 import Book from './Book';
 import './Home.css';
+import {Helmet} from "react-helmet";
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
+    const { t } = useTranslation();
     return (
       <>
         <div class="homepagediv">
-        <h1 className='home'>Welcome to TheBookishClub. Not sure what to read? Explore some of the best sellers.</h1>
+        <Helmet>
+                <meta name="description" content="Borrow a book online
+				                                          Pick up and drop service avaiable
+				                                          Book Recommendation system
+				                                          Interesting Book suggestions"/>
+                <title>Home</title>
+        </Helmet>
+        <h1 className='home'>{t("home_msg")}</h1>
         <br />
           
         </div>

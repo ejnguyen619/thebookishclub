@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
+import {Helmet} from "react-helmet";
 
 export default function CurrentBooks() {
   const [currentBooks, setCurrentBooks] = useState([]);
@@ -76,6 +77,11 @@ export default function CurrentBooks() {
     return (
       <>
         <div className='current-books'>
+        <Helmet>
+                <meta name="description" content="Over 10,000 books
+                                                  Popular, Academic and Work Books" />
+                <title>Current books</title>
+        </Helmet>
           <h1 >Our Collection of Books:</h1>
         </div>
         <div className="grid">
