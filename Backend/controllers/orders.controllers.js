@@ -64,14 +64,14 @@ exports.createNewOrder = (req, res) => {
     });
 
     Book.findOneAndUpdate({ book_id: book_id },  
-        { $inc: { books_count: -1}}, {new: true}, function (err, docs) { 
+        { $inc: { books_count: -1}}, { useFindAndModify: false }, function (err, docs) { 
         if (err){ 
             console.log(err) 
         } 
         else{ 
             console.log("Updated Doc : ",docs); 
         } 
-    }); 
+    });
     
 };
 

@@ -18,6 +18,7 @@
     padding: 10px;
     margin-top: 70px;
     margin-left: 90px;
+    width: 50%;
 }
 
 .column > h3 {
@@ -52,4 +53,11 @@ input {
     margin-bottom: 10px;
     border: 1px solid black;
     padding: 5px;
+}
+
+.map-box {
+    border: 1px solid black;
+    /* min-height: 400px; */
+    min-width: 600px;
+    padding: 20px;
 }

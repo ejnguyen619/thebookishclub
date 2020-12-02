@@ -10,6 +10,7 @@ module.exports = app => {
   router.get("/findBooksByTitle", books.findAllByTitle);
   router.get("/findBooksByAuthor", books.findAllByAuthor);
   router.get("/findAllBooks", books.findAllBooks);
+  router.put("/updateBookLibrary", books.updateBookLibrary);
 
   app.use('/api/books', router);
 };
