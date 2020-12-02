@@ -16,6 +16,7 @@ import Profile from './components/pages/Profile';
 import Membership from './components/pages/Membership';
 import SearchResults from './components/pages/SearchResults';
 import Booking from './components/pages/Booking';
+import ConfirmBooking from './components/pages/ConfirmBooking';
 import NotFound from './components/pages/NotFound';
 import {Helmet} from "react-helmet";
 
@@ -68,6 +69,7 @@ function App() {
         <Route path='/search/name/:bookName' exact component={SearchResults} />
         <Route path='/search/author/:authorName' exact component={SearchResults} />
         <Route path='/booking' exact render={(props) => <Booking {...props}/>} />
+        <Route path='/confirm-booking' exact component={ConfirmBooking} />
         <Route component={NotFound} />
       </Switch>
       </div>

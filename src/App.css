@@ -30,6 +30,7 @@ input, button {
 .profile,
 /* .membership, */
 .search-results,
+.confirm-booking,
 /* .booking, */
 .not-found {
   display: flex;
