@@ -1,3 +1,5 @@
+import path from 'path';
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -34,6 +36,9 @@ db.mongoose
 app.use(morgan('short'));
 app.use(cors(corsOptions));
 
+// Link server with React build folder
+app.use(express.static(path.join(__dirname, '/build')));
+
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
@@ -51,6 +56,11 @@ require("./routes/orders.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 5050;
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/build/index.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
