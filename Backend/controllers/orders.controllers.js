@@ -79,67 +79,15 @@ exports.createNewOrder = (req, res) => {
     });
 
     Book.findOneAndUpdate({ book_id: book_id },  
-<<<<<<< HEAD
         { $inc: { books_count: -1}},{ useFindAndModify: false },
         function (err, docs) { 
-=======
-        { $inc: { books_count: -1}}, { useFindAndModify: false }, function (err, docs) { 
->>>>>>> b86a377ce2d60e7c45fb3bcffef6c798530c96fe
         if (err){ 
             console.log(err);
         } 
         else{ 
             console.log("Updated Doc : ",docs); 
         } 
-<<<<<<< HEAD
-    }); 
-
-//     rent = new Rent({
-//         book_id: book_id,
-//         email: email,
-//         title: title,
-//         name: req.body.name,
-//         DateBorrowed: DateBorrowed,
-//         DateofReturn: DateofReturn
-//     });
-
-   
-// // Save rent in the database
-//     rent.save(rent)
-//     .then(data => {
-//         // console.log(res);
-//         res.send(data);
-//     })
-//     .catch(err => {
-//         res.status(500).send({
-//         message:
-//             err.message || "Some error occurred while renting the book."
-//         });
-//     });
-
-//     User.findOneAndUpdate({ email: email },
-//         {result: {$lte:{user_books_rented_count:3}}},
-//         {new:true},{ useFindAndModify: false },
-//         function (err) { 
-        
-//         if (result==true)({ 
-//             $inc: { user_books_rented_count: +1}
-//             })
-        
-//         else if (err){ 
-//             console.log(err);
-//         } 
-//         else { 
-//             console.log(res);
-//         }
-
-//     });
-
-
-}
-=======
     });
     
 };
->>>>>>> b86a377ce2d60e7c45fb3bcffef6c798530c96fe
 

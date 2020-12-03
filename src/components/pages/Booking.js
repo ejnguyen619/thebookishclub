@@ -16,11 +16,6 @@ export default function Booking() {
     const [err, setErr] = useState(null);
     const [details, setDetails] = useState({delivery: "", name: "", email: "", address: "", address2: ""});
 
-    const [confirmBooking, setConfirmBooking] = useState(false);
-    const userId = localStorage.getItem('userId');
-    const [err, setErr] = useState(null);
-    const [details, setDetails] = useState({delivery: "", name: "", email: "", address: "", address2: ""});
-
     // const locations = [
     //   {
     //     "Dr Martin Luther King Jr. Library": { 

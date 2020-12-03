@@ -13,6 +13,7 @@ export default function Memberership() {
   const [isMember, setIsMember] = useState(false);
   const [membershipStartDate, setMembershipStartDate] = useState("");
   const [membershipEndDate, setMembershipEndDate] = useState("");
+  // const memberSet = localStorage.getItem('memberSet');
   
   useEffect(() => {
     const fetchData = async () => {
@@ -44,9 +45,9 @@ export default function Memberership() {
     return (
       <div className="Membership">
         <Helmet>
-                  <meta name="description" content="Membership
-                                                    For Students and Professionals"/>
-                  <title>Membership</title>
+            <meta name="description" content="Membership
+                  For Students and Professionals"/>
+            <title>Membership</title>
         </Helmet>
       {err !== null && <h1 style={{textAlign: "center"}}>{err}</h1>}
       <h1 className='membership-header'>Great you are one of our members! Your membership details are:</h1>
@@ -59,14 +60,14 @@ export default function Memberership() {
     return (
       <div className="Membership">
         <Helmet>
-                  <meta name="description" content="Membership
-                                                    For Students and Professionals"/>
-                  <title>Membership</title>
+            <meta name="description" content="Membership
+                    For Students and Professionals"/>
+            <title>Membership</title>
         </Helmet>
       {err !== null && <h1 style={{textAlign: "center"}}>{err}</h1>}
       <h1 className='membership-header'>You are not a member yet. Please proceed to payment for our membership.</h1>
         {checkout ? (
-          <PayPal />
+          <PayPal isMember={isMember} setIsMember={setIsMember}/>
         ) : (
           <button
             onClick={() => {
