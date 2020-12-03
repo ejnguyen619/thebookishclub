@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../App.css';
+import './ContactUs.css';
 import {Helmet} from "react-helmet";
 
 export default function ContactUs() {
@@ -14,6 +15,7 @@ export default function ContactUs() {
 
     return (
       <>
+      <div className="backgroundContactUs">
         <form className='contact-us' onSubmit={submitHandler}>
           <div className='form-inner'>
           <Helmet>
@@ -41,6 +43,7 @@ export default function ContactUs() {
             {formsubmit && <h1 style={{color:'red'}}>Form submitted!</h1>}
           </div>
         </form>
+        </div>
       </>
     );
 }

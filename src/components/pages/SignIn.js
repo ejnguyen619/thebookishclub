@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
+import './SignInSignUp.css'
 import { Link, Redirect } from 'react-router-dom';
 
 export default function SignIn({Login, error, loggedIn, authLogin}) {
@@ -38,6 +39,7 @@ export default function SignIn({Login, error, loggedIn, authLogin}) {
 
     return (
       <>
+      <div className="signInBackground">
       <form className='sign-in' onSubmit={submitHandler}>
         <div className='form-inner'>
           <h2>Login</h2>
@@ -61,6 +63,7 @@ export default function SignIn({Login, error, loggedIn, authLogin}) {
           <Link to='/sign-up'>Create New Account</Link>
         </div>
       </form>
+      </div>
       </>
     );
 }

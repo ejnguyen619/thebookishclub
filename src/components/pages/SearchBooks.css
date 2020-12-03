@@ -6,11 +6,28 @@
     justify-content: center;
 }
 
+.backgroundSearchBooks{
+  background-image: url(../../assets/image_option9.jpg);
+  background-size: 'cover';
+  height: 100vh;
+  /* background-color: rgba(0, 0, 0, 0.9); */
+  /* backdrop-filter: blur(6px); */
+}
+
+.backgroundSearchDiv{
+  backdrop-filter: blur(4px);
+  height: 100vh;
+}
+
 .searchdiv
 {
+    margin-top: 10vh;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
+    align-items: center;
+    /* height: 20vh; */
 }
+
 .openBtn {
     background: #797777;
     border: none;

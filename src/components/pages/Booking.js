@@ -147,7 +147,7 @@ export default function Booking() {
               <p><strong>Publication Year:</strong> {bookInfo.original_publication_year} </p>
               {/* <p>Library: {bookInfo.library}</p> */}
             </div>
-            <button className="confirm" onClick={goBack}>Go Back to Results</button>
+            <button className="confirmButton" onClick={goBack}>Go Back to Results</button>
           </div>
           <div className="columnBookDetail">
             <LoadScript

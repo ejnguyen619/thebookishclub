@@ -5,7 +5,7 @@ import '../../App.css';
 import './CurrentBooks.css';
 import Card from 'react-bootstrap/Card';
 // import CardGroup from 'react-bootstrap/CardGroup'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
 import {Helmet} from "react-helmet";
@@ -97,7 +97,7 @@ export default function CurrentBooks() {
                   <strong>Publication Year:</strong> {book.original_publication_year}
                 </Card.Text>
               </Card.Body>
-              <Button className="viewButton" onClick={() => handleEntry(book.id)}>View</Button>
+              <button className="viewButton" onClick={() => handleEntry(book.id)}>View</button>
             </Card>
           ))
         }

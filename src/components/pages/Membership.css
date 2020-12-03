@@ -6,7 +6,15 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
+    backdrop-filter: blur(5px);
+    height: 90vh;
+    /* <span>Photo by <a href="https://unsplash.com/@pirye?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Amelie &amp; Niklas Ohlrogge</a> on <a href="https://unsplash.com/s/photos/library?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> */
   }
+
+.backgroundMembership {
+  background-image: url(../../assets/image_option9.jpg);
+  height: 100vh;
+}
 
 .membership-header {
     align-items: center;

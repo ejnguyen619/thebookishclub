@@ -67,6 +67,7 @@ export default function SignUp() {
 
     return (
       <>
+      <div className="signUpBackground">
       <form className='sign-in' onSubmit={submitHandler}>
         <div className='form-inner'>
         <Helmet>
@@ -101,6 +102,7 @@ export default function SignUp() {
           <input type='submit' value='SIGN UP' />
         </div>
       </form>
+      </div>
       </>
     );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
+import './Profile.css'
 import {Helmet} from "react-helmet";
 
 export default function Profile() {
@@ -73,6 +74,7 @@ export default function Profile() {
 
     return (
       <>
+      <div className="profileBackgroundImage">
       <form className='profile' onSubmit={submitHandler}>
         <div className='form-inner'>
         <Helmet>
@@ -114,6 +116,7 @@ export default function Profile() {
           <input type='submit' value='UPDATE' />
         </div>
       </form>
+      </div>
       </>
     );
 }

@@ -43,6 +43,7 @@ export default function Memberership() {
 
   if(isMember) {
     return (
+      <div className="backgroundMembership">
       <div className="Membership">
         <Helmet>
             <meta name="description" content="Membership
@@ -50,14 +51,16 @@ export default function Memberership() {
             <title>Membership</title>
         </Helmet>
       {err !== null && <h1 style={{textAlign: "center"}}>{err}</h1>}
-      <h1 className='membership-header'>Great you are one of our members! Your membership details are:</h1>
-      <h2>Member since: {membershipStartDate}</h2>
-      <h2>Membership expires on: {membershipEndDate}</h2>
+      <h1 className='membership-header'>Great.. you are one of our members! Your membership details are:</h1>
+      <h2>Member since: {membershipStartDate.substring(0, 10)}</h2>
+      <h2>Membership expires on: {membershipEndDate.substring(0, 10)}</h2>
+    </div>
     </div>
     )
   }
   else {
     return (
+      <div className="backgroundMembership">
       <div className="Membership">
         <Helmet>
             <meta name="description" content="Membership
@@ -77,6 +80,7 @@ export default function Memberership() {
             Checkout
           </button>
         )}
+      </div>
       </div>
     );
   }

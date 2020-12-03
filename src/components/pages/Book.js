@@ -1,6 +1,6 @@
 import React from 'react';
 import config from '../../config';
-
+// import image1 from '../../assets/image_option1.jpg';
 import './Book.css'
 
 class Book extends React.Component {
@@ -73,7 +73,7 @@ class Book extends React.Component {
                 <img src={items[rank].book_image} alt="Book cover"/>
               </div>
               <div className="titleStyling">
-              Title: {items[rank].title}
+              <strong>Title: {items[rank].title}</strong>
               </div>
               <div className="authorStyling">
               Author: {items[rank].author}

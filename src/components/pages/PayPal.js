@@ -32,8 +32,8 @@ export default function Paypal({isMember, setIsMember}) {
           alert('Your payment was successful!');
           // fetchData();
         },
-        
         onError: (err) => {
+          setError(err);
           console.log(err);
         },
       })

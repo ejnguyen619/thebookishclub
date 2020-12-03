@@ -46,35 +46,37 @@ export default function SearchBooks() {
 
     return (
       <>
-      <h1 className='search-books'>ONLINE LIBRARY</h1>
+      <div className="backgroundSearchBooks">
+        <div className="backgroundSearchDiv">
+          <h1 className='search-books'>ONLINE LIBRARY</h1>
+          <div className='searchdiv'>
+          <Helmet>
+              <meta name="description" content="Over 10,000 books
+                                                Popular, Academic and Work Books" />
+              <title>Browse a book</title>
+          </Helmet>
+          <button className="openBtn" onClick={openSearchName}>Search By Name</button>
+          </div>
+          <div id="myOverlayName" className="overlay">
+          <span className="closebtn" onClick={closeSearchName} title="Close Overlay">x</span>
+          <div className="overlay-content">
+          <input type="text" placeholder="Search.." name="search" onChange={e => setbookName(e.target.value)} value={bookName}/>
+          <button type="submit" onClick={submitHandlerName}><i className="fa fa-search"></i></button>
+          </div>
 
-      <div className='searchdiv'>
-      <Helmet>
-                <meta name="description" content="Over 10,000 books
-                                                  Popular, Academic and Work Books" />
-                <title>Browse a book</title>
-      </Helmet>
-      <button className="openBtn" onClick={openSearchName}>Search By Name</button>
+          </div>
+          <div className='searchdiv'>
+          <button className="openBtn" onClick={openSearchAuthor}>Search By Author</button>
+          </div>
+          <div id="myOverlayAuthor" className="overlay">
+          <span className="closebtn" onClick={closeSearchAuthor} title="Close Overlay">x</span>
+          <div className="overlay-content">
+          <input type="text" placeholder="Search.." name="search" onChange={e => setauthorName(e.target.value)} value={authorName}/>
+          <button type="submit" onClick={submitHandlerAuthor}><i className="fa fa-search"></i></button>
+          </div>
+          </div>
+        </div>
       </div>
-      <div id="myOverlayName" className="overlay">
-      <span className="closebtn" onClick={closeSearchName} title="Close Overlay">x</span>
-      <div className="overlay-content">
-      <input type="text" placeholder="Search.." name="search" onChange={e => setbookName(e.target.value)} value={bookName}/>
-      <button type="submit" onClick={submitHandlerName}><i className="fa fa-search"></i></button>
-      </div>
-
-      </div>
-      <div className='searchdiv'>
-      <button className="openBtn" onClick={openSearchAuthor}>Search By Author</button>
-      </div>
-      <div id="myOverlayAuthor" className="overlay">
-      <span className="closebtn" onClick={closeSearchAuthor} title="Close Overlay">x</span>
-      <div className="overlay-content">
-      <input type="text" placeholder="Search.." name="search" onChange={e => setauthorName(e.target.value)} value={authorName}/>
-      <button type="submit" onClick={submitHandlerAuthor}><i className="fa fa-search"></i></button>
-      </div>
-      </div>
-
       </>
     );
 }

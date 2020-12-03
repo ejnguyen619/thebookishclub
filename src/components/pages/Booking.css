@@ -61,3 +61,17 @@ input {
     min-width: 600px;
     padding: 20px;
 }
+
+.confirmButton {
+    background: #797777;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmButton:hover{
+    background: #bbb;
+}

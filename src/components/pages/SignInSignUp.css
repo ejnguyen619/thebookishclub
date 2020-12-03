@@ -1,0 +1,11 @@
+.signInBackground {
+    background-image: url(../../assets/image_option14.jpg);
+    height: 100vh;
+    background-size: cover;
+}
+
+.signUpBackground {
+    background-image: url(../../assets/image_option14.jpg);
+    height: 100vh;
+    background-size: cover;
+}

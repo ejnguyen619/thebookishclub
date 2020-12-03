@@ -1,13 +1,22 @@
 .homepagediv {
-    /* margin-top: 0%; */
     align-items: center;
     padding: 20px;
     display: flex;
     justify-content: center;
+    /* background-image: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")"; */
 }
 
 .recommenderdiv {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.background {
+    background-image: url(../../assets/image_option6.jpg), linear-gradient(rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8));
+    background-size: 'cover';
+    /* <span>Photo by <a href="https://unsplash.com/@sylviasyang?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sylvia Yang</a> on <a href="https://unsplash.com/s/photos/library?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> */
+    height: 150vh;
 }
 

@@ -9,22 +9,23 @@ export default function Home() {
     const { t } = useTranslation();
     return (
       <>
+      <div className="background">
         <div class="homepagediv">
-        <Helmet>
-                <meta name="description" content="Borrow a book online
-				                                          Pick up and drop service avaiable
-				                                          Book Recommendation system
-				                                          Interesting Book suggestions"/>
-                <title>Home</title>
-        </Helmet>
-        <h1 className='home'>{t("home_msg")}</h1>
-        <br />
-          
-        </div>
-        <div class="recommenderdiv">
-          <Book />
-        </div>
-        
+          <Helmet>
+                  <meta name="description" content="Borrow a book online
+                                                    Pick up and drop service avaiable
+                                                    Book Recommendation system
+                                                    Interesting Book suggestions"/>
+                  <title>Home</title>
+          </Helmet>
+          <h1 className='home'>{t("home_msg")}</h1>
+          <br />
+            
+          </div>
+          <div class="recommenderdiv">
+            <Book />
+          </div>
+      </div>
       </>
     );
 }

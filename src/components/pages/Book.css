@@ -2,6 +2,14 @@
 .content {
     text-align: center;
     padding: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    color: black;
+    backdrop-filter: blur(4px);
+    /* background-color: gray; */
+    /* background-blend-mode: overlay; */
+    /* background-image: url(../../assets/image_option1.jpg); */
 }
 
 button {
@@ -16,26 +24,46 @@ button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.bestSellerBtn {
+    background: #797777;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+.bestSellerBtn:hover {
+  background: #bbb;
+  /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+}
+
 .bookCoverStyling img {
-    height: 300px;
-    width: 200px;
+    height: 350px;
+    width: 250px;
 }
 
 .titleStyling {
     font-weight: bold;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    /* color: black;
+    background-color: whitesmoke; */
 }
 
 /* .authorStyling {
-    
+    color: black;
+    background-color: whitesmoke;
 } */
 
 .descriptionStyling {
     font-style: italic;
+    /* color: black;
+    background-color: whitesmoke; */
 }
 
 .detail-name {
     font-weight: bold;
+    /* color: black;
+    background-color: whitesmoke; */
 }
 
 .bestSellerBtn {

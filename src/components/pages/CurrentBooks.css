@@ -6,16 +6,17 @@
 }
 
 .viewButton {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 6px;
-  background-color: gray;
-  border: 2px solid black;
-  width: 80%;
+  background: #797777;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
 
 .viewButton:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background: #bbb;
 }
 
 .box {
