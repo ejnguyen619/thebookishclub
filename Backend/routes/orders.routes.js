@@ -7,6 +7,7 @@ module.exports = app => {
   
     // Create a new User
     router.post("/createNewOrder", orders.createNewOrder);
-  
+    router.get("/getOrderDetails", orders.getOrderDetails);
     app.use('/api/orders', router);
+
   };

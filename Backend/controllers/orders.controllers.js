@@ -79,20 +79,22 @@ exports.createNewOrder = (req, res) => {
     });
 
     Book.findOneAndUpdate({ book_id: book_id },  
-<<<<<<< HEAD
+
         { $inc: { books_count: -1}},{ useFindAndModify: false },
         function (err, docs) { 
-=======
-        { $inc: { books_count: -1}}, { useFindAndModify: false }, function (err, docs) { 
->>>>>>> b86a377ce2d60e7c45fb3bcffef6c798530c96fe
+       
         if (err){ 
             console.log(err);
         } 
         else{ 
             console.log("Updated Doc : ",docs); 
         } 
-<<<<<<< HEAD
     }); 
+
+
+    
+
+    
 
 //     rent = new Rent({
 //         book_id: book_id,
@@ -137,9 +139,20 @@ exports.createNewOrder = (req, res) => {
 
 
 }
-=======
+exports.getOrderDetails = (req, res) => {
+    const email=req.query.email;
+    Order.find({email:email})
+    .then(data => {
+      console.log(res);
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving books."
+      });
     });
-    
-};
->>>>>>> b86a377ce2d60e7c45fb3bcffef6c798530c96fe
+
+}
+
 
