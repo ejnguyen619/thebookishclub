@@ -11,6 +11,10 @@ export default function Booking() {
     const [showInfoWindow, setShowInfoWindow] = useState(false);
     const bookInfo = JSON.parse(localStorage.getItem('bookInfo'));
     const map_key = config.REACT_MAP_API_KEY;
+    const [confirmBooking, setConfirmBooking] = useState(false);
+    const userId = localStorage.getItem('userId');
+    const [err, setErr] = useState(null);
+    const [details, setDetails] = useState({delivery: "", name: "", email: "", address: "", address2: ""});
 
     // const locations = [
     //   {
@@ -52,11 +56,6 @@ export default function Booking() {
     const defaultCenter = {
       lat: 37.3355, lng: -121.8850
     }
-    const [confirmBooking, setConfirmBooking] = useState(false);
-    const bookInfo = JSON.parse(localStorage.getItem('bookInfo'));
-    const userId = localStorage.getItem('userId');
-    const [err, setErr] = useState(null);
-    const [details, setDetails] = useState({delivery: "", name: "", email: "", address: "", address2: ""});
 
     useEffect(() => {
       const fetchData = async () => {

@@ -116,20 +116,26 @@ const createQuery = req => {
 };
 
 exports.updateUserMembership = (req, res) => { 
-  if (!req.body) {
-    return res.status(400).send({
-      message: "Data to update can not be empty!"
-    });
-  }
+  // if (!req.body) {
+  //   return res.status(400).send({
+  //     message: "Data to update can not be empty!"
+  //   });
+  // }
   const id = req.params.id;
+  console.log(id);
   
-  var memberShip = true;
   var memberShipStartDate = new Date();
   var memberShipEndDate = new Date();
   memberShipEndDate.setFullYear(memberShipStartDate.getFullYear()+1);
+
+  // const user = new User({
+  //   memberShip: true,
+  //   memberShipStartDate: memberShipStartDate,
+  //   memberShipEndDate: memberShipEndDate
+  // });
   // Update membership status in the database
 
-  User.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  User.findByIdAndUpdate(id, {memberShip: true, memberShipStartDate: memberShipStartDate, memberShipEndDate: memberShipEndDate}, { useFindAndModify: false })
     .then(data => {
       if (!data) {
         res.status(404).send({

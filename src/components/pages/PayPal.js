@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 
 export default function Paypal() {
   const paypal = useRef();
+  const userId = localStorage.getItem('userId');
 
   useEffect(() => {
     window.paypal
@@ -23,6 +24,20 @@ export default function Paypal() {
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
           console.log(order);
+          await fetch(`/api/users/updateUserMembership/${userId}`)
+              .then(res => {
+                if (res.status >= 400) {
+                  throw new Error("Server responds with error!")
+                }
+                return res.json()
+              })
+              .then(userInfo => {
+                console.log(userInfo);
+                // console.log("User info: ", userInfo);
+                },
+                err => {
+                  console.log("error occured!");
+                })
           alert('Your payment was successful!')
         },
         onError: (err) => {
@@ -30,7 +45,7 @@ export default function Paypal() {
         },
       })
       .render(paypal.current);
-  }, []);
+  }, [userId]);
 
   return (
     <div>

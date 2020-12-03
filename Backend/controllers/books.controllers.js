@@ -45,7 +45,7 @@ exports.findAllBooks = (req, res) => {
   const PAGE_SIZE = 24;  // Similar to 'limit'
   var skip = (page - 1) * PAGE_SIZE;
   Books.find()
-    .select('book_id authors original_publication_year original_title language_code average_rating image_url library')
+    .select('book_id authors original_publication_year original_title title language_code average_rating image_url library')
     .skip(skip)                 // Same as before, always use 'skip' first
     .limit(PAGE_SIZE)
     .then(data => {
