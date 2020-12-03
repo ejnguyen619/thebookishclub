@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Books from './components/pages/Books';
 import ContactUs from './components/pages/ContactUs';
-import Account from './components/pages/Account';
 import SignIn from './components/pages/SignIn';
 import SignUp from './components/pages/Signup';
 import Home from './components/pages/Home';
@@ -56,9 +54,7 @@ function App() {
       </Helmet>
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/books' exact component={Books} />
         <Route path='/contact-us' exact component={ContactUs} />
-        <Route path='/account' exact component={Account} />
         <Route path='/sign-in' exact render={(props) => <SignIn {...props} Login={Login} error={error} loggedIn={loggedIn} authLogin={authLogin} />} />
         <Route path='/sign-up' exact render={(props) => <SignUp {...props} Login={Login} error={error} loggedIn={loggedIn} />} />
         <Route path='/search-books' exact component={SearchBooks} />

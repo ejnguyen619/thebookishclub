@@ -20,9 +20,9 @@ input, button {
 } */
 
 /* .home, */
-.books,
-.contact-us,
-.account,
+/* .books, */
+/* .contact-us, */
+/* .account, */
 .sign-in,
 /* .search-books, */
 /* .current-books, */
@@ -30,14 +30,38 @@ input, button {
 .profile,
 /* .membership, */
 .search-results,
-.confirm-booking,
+/* .confirm-booking, */
 /* .booking, */
 .not-found {
   display: flex;
-  height: 150vh;
+  height: 120vh;
   align-items: center;
   justify-content: center;
   /* font-size: 3rem; */
+}
+
+.contact-us {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-booking {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 450px;
+}
+
+.confirm-booking button {
+  background-color: #598ec7;
+  border: 2px solid black;
+  color: white;
+  padding: 10px 24px;
+  cursor: pointer;
+  width: 50%;
+  display: block;
+  font-size: 20px;
 }
 
 .books, .account {

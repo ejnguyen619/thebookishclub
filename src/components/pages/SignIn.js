@@ -30,7 +30,7 @@ export default function SignIn({Login, error, loggedIn, authLogin}) {
             else if(submitForm > 0) authLogin(false);
           })
       };
-    fetchData();
+      if(submitForm !== 0) fetchData();
     // eslint-disable-next-line
     }, [submitForm]);
 
