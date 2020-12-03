@@ -24,7 +24,8 @@ module.exports = mongoose => {
       ratings_4: Number,
       ratings_5: Number,
       image_url: String,
-      small_image_url: String
+      small_image_url: String,
+      library: {name: String, location: {lat: Number, lng: Number}}
     },
     { timestamps: true }
   );

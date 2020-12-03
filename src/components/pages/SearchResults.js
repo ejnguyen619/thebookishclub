@@ -57,11 +57,24 @@ export default function SearchResults({match}) {
     } else {
         return (
           <>
-            <div className="row">
-              <div className="column">
-                <h2>Search Results: {bookResult.length}</h2>
+          <div className="searchContentsDiv">
+            <h2>Total Search Results: {bookResult.length}</h2>
+            <table>
+              <tbody>
+              {
+                bookResult.map(book => (
+                  <tr key={book.id} onClick={() => handleEntry(book.id)}>
+                    <td>
+                      {book.title}
+                    </td>  
+                  </tr>
+                ))
+              }
+              </tbody>
+            </table>
+            {/* <div className="row">
                 <div className="result-box">
-                  <ul>
+                  <ul className="grid_list">
                   {
                     bookResult.map(book => (
                       <li key={book.id} onClick={() => handleEntry(book.id)}>
@@ -71,12 +84,8 @@ export default function SearchResults({match}) {
                   }
                   </ul>
                 </div>
-              </div>
-              <div className="column">
-                <h2>Available At:</h2>
-                <div className="map-box"></div>
-              </div>
-            </div>
+            </div> */}
+          </div>
           </>
         );
     }

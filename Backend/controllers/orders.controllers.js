@@ -79,14 +79,19 @@ exports.createNewOrder = (req, res) => {
     });
 
     Book.findOneAndUpdate({ book_id: book_id },  
+<<<<<<< HEAD
         { $inc: { books_count: -1}},{ useFindAndModify: false },
         function (err, docs) { 
+=======
+        { $inc: { books_count: -1}}, { useFindAndModify: false }, function (err, docs) { 
+>>>>>>> b86a377ce2d60e7c45fb3bcffef6c798530c96fe
         if (err){ 
             console.log(err);
         } 
         else{ 
             console.log("Updated Doc : ",docs); 
         } 
+<<<<<<< HEAD
     }); 
 
 //     rent = new Rent({
@@ -132,4 +137,9 @@ exports.createNewOrder = (req, res) => {
 
 
 }
+=======
+    });
+    
+};
+>>>>>>> b86a377ce2d60e7c45fb3bcffef6c798530c96fe
 
