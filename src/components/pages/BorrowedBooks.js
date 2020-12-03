@@ -61,7 +61,7 @@ export default function BorrowedBooks() {
                <ul>
                   {order.map(orderDetails => (
 
-                   <div>
+                   <div key={orderDetails.book_id}>
                   
                   <li>Book ID: {orderDetails.book_id}</li>
                   <li>Book Name: {orderDetails.title}</li>

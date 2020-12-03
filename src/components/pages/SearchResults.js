@@ -57,6 +57,7 @@ export default function SearchResults({match}) {
     } else {
         return (
           <>
+          <div className="SearchResultsBackground">
           <div className="searchContentsDiv">
             <h2>Total Search Results: {bookResult.length}</h2>
             <table>
@@ -85,6 +86,7 @@ export default function SearchResults({match}) {
                   </ul>
                 </div>
             </div> */}
+          </div>
           </div>
           </>
         );
