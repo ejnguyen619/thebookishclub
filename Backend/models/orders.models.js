@@ -8,6 +8,9 @@ module.exports = mongoose => {
         name: String,
         addressLine1: String,
         addressLine2: String,
+        DateBorrowed: Date,
+        DateOfReturn: Date
+
       },
       { timestamps: true }
     );

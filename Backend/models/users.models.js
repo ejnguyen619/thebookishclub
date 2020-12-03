@@ -11,7 +11,8 @@ module.exports = mongoose => {
         image_url: String,
         memberShip: {type: Boolean, default: false},
         memberShipStartDate: Date,
-        memberShipEndDate: Date
+        memberShipEndDate: Date,
+        //user_books_rented_count: {type:Number, default:0}
       },
       { timestamps: true }
     );

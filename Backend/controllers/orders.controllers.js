@@ -1,6 +1,9 @@
 const db = require("../models");
 const Order = db.orders;
 const Book = db.books;
+const User = db.users;
+const Rent = db.rent;
+
 
 // when the user clicks on confirm booking option, the orders database is populated with details provided by user.
 // The number of book is reduced by 1 for that particular book id
@@ -10,12 +13,19 @@ exports.createNewOrder = (req, res) => {
     // Validate request
 
     var order = null;
+    //var rent = null;
+    var DateBorrowed = new Date();
+    var DateOfReturn = new Date();
+    DateOfReturn.setDate(DateOfReturn.getDate() + 30);
+
+    console.log(DateOfReturn);
+    console.log(DateBorrowed);
 
     // book_id, email, and title should come from user details. Putting in query parameter as of now
     var book_id = req.query.book_id;
     var email = req.query.email;
     var title = req.query.title;
-
+    
     // console.log(book_id);
 
     // check for the delivery type in the request body
@@ -32,7 +42,10 @@ exports.createNewOrder = (req, res) => {
             name: req.body.name,
             deliveryType: req.body.deliveryType,
             addressLine1: req.body.addressLine1,
-            addressLine2: req.body.addressLine2
+            addressLine2: req.body.addressLine2,
+            DateBorrowed: DateBorrowed,
+            DateOfReturn: DateOfReturn
+
         });
     }
     else if (req.body.deliveryType == "Pickup"){
@@ -42,7 +55,9 @@ exports.createNewOrder = (req, res) => {
             email: email,
             title: title,
             name: req.body.name,
-            deliveryType: req.body.deliveryType
+            deliveryType: req.body.deliveryType,
+            DateBorrowed: DateBorrowed,
+            DateOfReturn: DateOfReturn
         });
     }
     else {
@@ -64,14 +79,57 @@ exports.createNewOrder = (req, res) => {
     });
 
     Book.findOneAndUpdate({ book_id: book_id },  
-        { $inc: { books_count: -1}}, {new: true}, function (err, docs) { 
+        { $inc: { books_count: -1}},{ useFindAndModify: false },
+        function (err, docs) { 
         if (err){ 
-            console.log(err) 
+            console.log(err);
         } 
         else{ 
             console.log("Updated Doc : ",docs); 
         } 
     }); 
-    
-};
+
+//     rent = new Rent({
+//         book_id: book_id,
+//         email: email,
+//         title: title,
+//         name: req.body.name,
+//         DateBorrowed: DateBorrowed,
+//         DateofReturn: DateofReturn
+//     });
+
+   
+// // Save rent in the database
+//     rent.save(rent)
+//     .then(data => {
+//         // console.log(res);
+//         res.send(data);
+//     })
+//     .catch(err => {
+//         res.status(500).send({
+//         message:
+//             err.message || "Some error occurred while renting the book."
+//         });
+//     });
+
+//     User.findOneAndUpdate({ email: email },
+//         {result: {$lte:{user_books_rented_count:3}}},
+//         {new:true},{ useFindAndModify: false },
+//         function (err) { 
+        
+//         if (result==true)({ 
+//             $inc: { user_books_rented_count: +1}
+//             })
+        
+//         else if (err){ 
+//             console.log(err);
+//         } 
+//         else { 
+//             console.log(res);
+//         }
+
+//     });
+
+
+}
 
