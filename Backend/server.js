@@ -1,4 +1,4 @@
-// import path from 'path';
+//import path from 'path';
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -37,7 +37,7 @@ app.use(morgan('short'));
 app.use(cors(corsOptions));
 
 // Link server with React build folder
-// app.use(express.static(path.join(__dirname, '/build')));
+//app.use(express.static(path.join(__dirname, '/build')));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
