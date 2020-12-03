@@ -122,6 +122,7 @@ exports.updateUserMembership = (req, res) => {
     });
   }
   const id = req.params.id;
+  
   var memberShip = true;
   var memberShipStartDate = new Date();
   var memberShipEndDate = new Date();

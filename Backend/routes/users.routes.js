@@ -8,6 +8,7 @@ module.exports = app => {
 
     // Update an existing user based on email
     router.put("/updateUser/:id", users.updateUser);
+    router.put("/updateUserMembership/:id", users.updateUserMembership);
 
     // Get User Info
     router.get("/", users.getUserInfo);

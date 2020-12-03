@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import '../../App.css';
 import './CurrentBooks.css';
 import Card from 'react-bootstrap/Card';
+// import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
@@ -96,10 +97,10 @@ export default function CurrentBooks() {
                   <strong>Publication Year:</strong> {book.original_publication_year}
                 </Card.Text>
               </Card.Body>
-              <Button variant="secondary" size="sm" onClick={() => handleEntry(book.id)}>View</Button>
+              <Button className="viewButton" onClick={() => handleEntry(book.id)}>View</Button>
             </Card>
           ))
-        }   
+        }
         </div>
           <div>
             <Pagination
