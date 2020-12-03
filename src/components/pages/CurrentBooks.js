@@ -9,8 +9,10 @@ import Card from 'react-bootstrap/Card';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
 import {Helmet} from "react-helmet";
+import { useTranslation } from 'react-i18next';
 
 export default function CurrentBooks() {
+  const { t } = useTranslation();
   const [currentBooks, setCurrentBooks] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -82,7 +84,7 @@ export default function CurrentBooks() {
                                                   Popular, Academic and Work Books" />
                 <title>Current books</title>
         </Helmet>
-          <h1 >Our Collection of Books:</h1>
+          <h1 >{t("current_msg")}</h1>
         </div>
         <div className="grid">
         {

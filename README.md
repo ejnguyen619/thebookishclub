@@ -20,7 +20,7 @@ In the main directory, run `npm install` so that you can run the React applicati
 In the main directory, run `npm run build`, which creates a build folder. Copy the build folder into the Backend folder.
 
 ### Step 4: Run application
-Go to the Backend directory and run independencies with `npm install`.
+Go to the Backend directory and run dependencies with `npm install`.
 Then, run `npm start` to start both the front-end and back-end server.
 Open a web browser and put in the URL [http://localhost:5050](http://localhost:5050).
 

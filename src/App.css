@@ -30,6 +30,7 @@ input, button {
 .profile,
 /* .membership, */
 .search-results,
+/* .language, */
 /* .confirm-booking, */
 /* .booking, */
 .not-found {
@@ -47,13 +48,13 @@ input, button {
   justify-content: center;
 }
 
-.confirm-booking {
+.confirm-booking, .language {
   text-align: center;
   margin-top: 20px;
   margin-left: 450px;
 }
 
-.confirm-booking button {
+.confirm-booking button, .language button {
   background-color: #598ec7;
   border: 2px solid black;
   color: white;

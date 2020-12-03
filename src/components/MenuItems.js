@@ -27,4 +27,9 @@ export const AccountMenuItems = [
     path: '/membership',
     cName: 'dropdown-link'
   },
+  {
+    title: 'language',
+    path: '/language',
+    cName: 'dropdown-link'
+  },
 ]
