@@ -3,9 +3,11 @@ import '../../App.css';
 import PayPal from './PayPal';
 import './Membership.css';
 import {Helmet} from "react-helmet";
+import { useTranslation } from 'react-i18next';
 
 export default function Memberership() {
 
+  const { t } = useTranslation();
   const [checkout, setCheckOut] = useState(false);
   const userId = localStorage.getItem('userId');
   const [err, setErr] = useState(null);
@@ -50,9 +52,9 @@ export default function Memberership() {
             <title>Membership</title>
         </Helmet>
       {err !== null && <h1 style={{textAlign: "center"}}>{err}</h1>}
-      <h1 className='membership-header'>Great you are one of our members! Your membership details are:</h1>
-      <h2>Member since: {membershipStartDate}</h2>
-      <h2>Membership expires on: {membershipEndDate}</h2>
+      <h1 className='membership-header'>{t("member_msg")}</h1>
+      <h2>{t("member_start")} {membershipStartDate}</h2>
+      <h2>{t("member_end")} {membershipEndDate}</h2>
     </div>
     )
   }
@@ -65,7 +67,7 @@ export default function Memberership() {
             <title>Membership</title>
         </Helmet>
       {err !== null && <h1 style={{textAlign: "center"}}>{err}</h1>}
-      <h1 className='membership-header'>You are not a member yet. Please proceed to payment for our membership.</h1>
+      <h1 className='membership-header'>{t("not_member")}</h1>
         {checkout ? (
           <PayPal isMember={isMember} setIsMember={setIsMember}/>
         ) : (

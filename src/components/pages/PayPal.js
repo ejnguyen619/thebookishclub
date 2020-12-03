@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 export default function Paypal({isMember, setIsMember}) {
   // const paypal = useRef();
+  const { t } = useTranslation();
   const [paid, setPaid] = React.useState(false);
   const [error, setError] = React.useState(null);
   const paypalRef = useRef();
@@ -72,18 +74,18 @@ export default function Paypal({isMember, setIsMember}) {
           }
     fetchData();
     setIsMember(!isMember);
-    return <div>Payment successful.!</div>;
+    return <div>{t("pay_yes")}</div>;
   }
 
   // If any error occurs
   if (error) {
-    return <div>Error Occurred in processing payment.! Please try again.</div>;
+    return <div>{t("pay_error")}</div>;
   }
 
   // Default Render
   return (
     <div>
-      <h4>Total Amount is $20</h4>
+      <h4>{t("pay_amount")}</h4>
       <div ref={paypalRef} />
     </div>
   );

@@ -34,9 +34,9 @@
 }
 
 .btnmain:hover {
-  padding: 6px 18px;
+  padding: 10px 24px;
   transition: all 0.3s ease-out;
-  background-color:green;
+  background-color: #a1c3e7;
   color: #fff;
   border-radius: 4px;
   border: 2px solid var(--primary);

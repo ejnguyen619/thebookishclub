@@ -12,6 +12,7 @@ import CurrentBooks from './components/pages/CurrentBooks';
 import BorrowedBooks from './components/pages/BorrowedBooks';
 import Profile from './components/pages/Profile';
 import Membership from './components/pages/Membership';
+import Language from './components/pages/Language';
 import SearchResults from './components/pages/SearchResults';
 import Booking from './components/pages/Booking';
 import ConfirmBooking from './components/pages/ConfirmBooking';
@@ -62,6 +63,7 @@ function App() {
         <Route path='/borrowed-books' exact component={BorrowedBooks} />
         <Route path='/profile' exact render={() => <Profile user={user} setUser={setUser} /> } />
         <Route path='/membership' exact component={Membership} />
+        <Route path='/language' exact component={Language} />
         <Route path='/search/name/:bookName' exact component={SearchResults} />
         <Route path='/search/author/:authorName' exact component={SearchResults} />
         <Route path='/booking' exact render={(props) => <Booking {...props}/>} />

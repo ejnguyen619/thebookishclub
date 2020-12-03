@@ -22,3 +22,5 @@ i18next
       loadPath: loadPath
     }
   })
+
+  export default i18next;

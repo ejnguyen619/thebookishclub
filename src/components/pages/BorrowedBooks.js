@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
 import {Helmet} from "react-helmet";
-
+import { useTranslation } from 'react-i18next';
 
 export default function BorrowedBooks() {
+  const { t } = useTranslation();
   //const [checkout, setCheckOut] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const userEmail = localStorage.getItem('userEmail');
@@ -55,7 +56,7 @@ export default function BorrowedBooks() {
                                                   can be borrowed"/>
                 <title>Borrowed books</title>
          </Helmet>
-        <h1 className='borrowedBooksDiv'>Your List of Borrowed Books:</h1>
+        <h1 className='borrowedBooksDiv'>{t("borrow_msg")}</h1>
         {err !== null && <h1 style={{textAlign: "center"}}>{err}</h1>}
                <ul>
                   {order.map(orderDetails => (

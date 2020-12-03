@@ -3,10 +3,12 @@ import '../../App.css';
 import './SearchBooks.css';
 import { Redirect } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import { useTranslation } from 'react-i18next';
 
 
 export default function SearchBooks() {
 
+  const { t } = useTranslation();
   const [bookName, setbookName] = useState("");
   const [authorName, setauthorName] = useState("");
   const [result, setResult] = useState(false);
@@ -46,7 +48,7 @@ export default function SearchBooks() {
 
     return (
       <>
-      <h1 className='search-books'>ONLINE LIBRARY</h1>
+      <h1 className='search-books'>{t("online_library")}</h1>
 
       <div className='searchdiv'>
       <Helmet>
