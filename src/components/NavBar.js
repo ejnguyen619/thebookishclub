@@ -16,6 +16,7 @@ function NavBar({loggedIn, setLoggedIn}) {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const topLevel = (e) => e.preventDefault(); 
 
   const bookMouseEnter = () => 
     (window.innerWidth < 960 ? setBookDropdown(false) : setBookDropdown(true));
@@ -30,7 +31,7 @@ function NavBar({loggedIn, setLoggedIn}) {
   return (
     <>
       <nav className='navbar'>
-        <Link to='/' className='navbar-logo'>
+        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             TheBookishClub
         </Link>
         <div className='menu-icon' onClick={handleClick}>
@@ -46,7 +47,7 @@ function NavBar({loggedIn, setLoggedIn}) {
             onMouseEnter={bookMouseEnter}
             onMouseLeave={bookMouseLeave}
           >
-            <Link to='/books' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/books' className='nav-links' onClick={topLevel}>
             {t("books")} <i className='fas fa-caret-down' />
             </Link>
             {bookdropdown && <Dropdown tab='books' loggedIn={loggedIn}/>}
@@ -55,7 +56,7 @@ function NavBar({loggedIn, setLoggedIn}) {
             onMouseEnter={accountMouseEnter}
             onMouseLeave={accountMouseLeave}
           >
-            <Link to='/account' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/account' className='nav-links' onClick={topLevel}>
             {t("account")} <i className='fas fa-caret-down' />
             </Link>
             {accountdropdown && <Dropdown tab='account' loggedIn={loggedIn}/>}
