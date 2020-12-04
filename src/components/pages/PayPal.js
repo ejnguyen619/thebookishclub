@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next';
 
 export default function Paypal({isMember, setIsMember}) {
   // const paypal = useRef();
   const { t } = useTranslation();
-  const [paid, setPaid] = React.useState(false);
-  const [error, setError] = React.useState(null);
+  const [paid, setPaid] = useState(false);
+  const [error, setError] = useState(null);
   const paypalRef = useRef();
   const userId = localStorage.getItem('userId');
 
@@ -73,7 +73,7 @@ export default function Paypal({isMember, setIsMember}) {
             })
           }
     fetchData();
-    setIsMember(!isMember);
+    setIsMember(true);
     return <div>{t("pay_yes")}</div>;
   }
 

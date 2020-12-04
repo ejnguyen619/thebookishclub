@@ -44,6 +44,11 @@ export default function Memberership() {
   }, [userId, isMember]);
 
   if(isMember) {
+    // if (membershipStartDate !== undefined) {
+    //   setMembershipStartDate(membershipStartDate.substr(0, 10));
+    //   setMembershipEndDate(membershipEndDate.substr(0, 10));
+    // }
+    
     return (
       <div className="backgroundMembership">
       <div className="Membership">
@@ -54,8 +59,8 @@ export default function Memberership() {
         </Helmet>
       {err !== null && <h1 style={{textAlign: "center"}}>{err}</h1>}
       <h1 className='membership-header'>{t("member_msg")}</h1>
-      <h2>{t("member_start")} {membershipStartDate.substring(0, 10)}</h2>
-      <h2>{t("member_end")} {membershipEndDate.substring(0, 10)}</h2>
+      <h2>{t("member_start")} {membershipStartDate}</h2>
+      <h2>{t("member_end")} {membershipEndDate}</h2>
     </div>
     </div>
     )
