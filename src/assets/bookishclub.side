@@ -1,0 +1,173 @@
+{
+  "id": "142554a7-7050-4531-8eba-71c5425c2286",
+  "version": "2.0",
+  "name": "bookishclub",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "a72a39c6-a8b4-46bc-8c0a-41fcfd8bb0a3",
+    "name": "Test_login",
+    "commands": [{
+      "id": "99d44b86-b11f-4e78-971b-e30bcb07fb0b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06f87121-46ed-46df-811d-48654221df96",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x795",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55a05acb-ecb0-4218-ad22-0f7f14ce7330",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bestSellerBtn",
+      "targets": [
+        ["css=.bestSellerBtn", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'See a Best Seller')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d09ccdea-b500-46d1-a622-db15e9dc7561",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Search Books",
+      "targets": [
+        ["linkText=Search Books", "linkText"],
+        ["css=li:nth-child(1) > .dropdown-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Search Books')]", "xpath:link"],
+        ["xpath=//div[@id='root']/nav/ul/li[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/sign-in')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Search Books')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ee05849-5a0a-44e6-9c57-b5f2336ebd83",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["name=name", "name"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "872b8cd8-c080-429b-9118-2ffcc736bec6",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["name=name", "name"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "JD10"
+    }, {
+      "id": "b735be91-608f-4d9e-98a9-87dbd6bce4d9",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64bce7c8-5edc-4fb9-b9bf-2266c5224c6d",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "jd10@abc.com"
+    }, {
+      "id": "a0e6d060-5478-4b0f-9b72-04ec171a0fca",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "31d17f22-beb2-48d0-9c54-e2ab6d9b97b8",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "password"
+    }, {
+      "id": "9af9912e-c5ff-4948-a728-afe7a8de3f8a",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(5)",
+      "targets": [
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=//input[@value='LOGIN']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3936f9c0-b48d-400d-a689-746b2fb9add9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Current Books",
+      "targets": [
+        ["linkText=Current Books", "linkText"],
+        ["css=li:nth-child(2) > .dropdown-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Current Books')]", "xpath:link"],
+        ["xpath=//div[@id='root']/nav/ul/li[2]/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/current-books')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Current Books')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "04353896-818b-4253-93b3-75a21142eeeb",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a72a39c6-a8b4-46bc-8c0a-41fcfd8bb0a3"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}

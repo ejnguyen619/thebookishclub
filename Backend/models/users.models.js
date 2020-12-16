@@ -4,8 +4,8 @@ module.exports = mongoose => {
     var schema = mongoose.Schema(
       {
         email: {type: String, lowercase: true, unique: true, required: [true, "can't be blank"], match: [/\S+@\S+\.\S+/, 'is invalid'], index: true},
-        password: String,
-        name: String,
+        password: {type: String, required: [true, "can't be blank"]},
+        name: {type: String, required: [true, "can't be blank"]},
         address: String,
         organization: String,
         image_url: String,

@@ -8,6 +8,7 @@ exports.findAllByTitle = (req, res) => {
     // console.log(condition);
 
     Books.find(condition)
+      .select('book_id authors original_publication_year original_title title language_code average_rating image_url library')
       .then(data => {
         console.log(res);
         res.send(data);
@@ -27,6 +28,7 @@ exports.findAllByAuthor = (req, res) => {
   // console.log(condition);
 
   Books.find(condition)
+    .select('book_id authors original_publication_year original_title title language_code average_rating image_url library')
     .then(data => {
       console.log(res);
       res.send(data);
