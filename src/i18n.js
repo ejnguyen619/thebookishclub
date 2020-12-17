@@ -20,6 +20,10 @@ i18next
     
     backend: {
       loadPath: loadPath
+    },
+
+    react: { 
+      useSuspense: false
     }
   })
 

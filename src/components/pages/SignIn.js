@@ -40,23 +40,23 @@ export default function SignIn({Login, error, loggedIn, authLogin}) {
     return (
       <>
       <div className="signInBackground">
-      <form className='sign-in' onSubmit={submitHandler}>
+      <form className='sign-in' onSubmit={submitHandler} data-testid="form">
         <div className='form-inner'>
           <h2>Login</h2>
           {(error !== "" && submitForm !== 0 && !loggedIn ? (<div className="error">{error}</div>) : "")}
           <div className='form-group'>
             <label htmlFor="name">Name: </label>
-            <input type="text" name="name" id='name' 
+            <input type="text" name="name" id='name' alt="name"
               onChange={e => setDetails({...details, name: e.target.value})} value={details.name}/>
           </div>
           <div className='form-group'>
             <label htmlFor="email">Email: </label>
-            <input type="email" name="email" id='email'
+            <input type="email" name="email" id='email' alt="email"
               onChange={e => setDetails({...details, email: e.target.value})} value={details.email}/>
           </div>
           <div className='form-group'>
             <label htmlFor="password">Password: </label>
-            <input type="password" name="password" id='password'
+            <input type="password" name="password" id='password' alt="password"
               onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
           </div>
           <input type='submit' value='LOGIN' />

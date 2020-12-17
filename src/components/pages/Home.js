@@ -11,7 +11,7 @@ export default function Home() {
       <>
       <div className="background">
       <div className="backgroundBlur">
-        <div class="homepagediv">
+        <div className="homepagediv">
           <Helmet>
                   <meta name="description" content="Borrow a book online
                                                     Pick up and drop service avaiable
@@ -23,7 +23,7 @@ export default function Home() {
           <br />
             
           </div>
-          <div class="recommenderdiv">
+          <div className="recommenderdiv">
             <Book />
           </div>
       </div>

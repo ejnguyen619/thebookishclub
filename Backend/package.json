@@ -14,15 +14,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.0.21",
     "jw-paginate": "^1.0.4",
-    "mocha": "^8.2.1",
     "mongoose": "^5.10.15",
     "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.10.0",
@@ -32,6 +29,9 @@
     "@babel/core": "^7.12.9",
     "@babel/node": "^7.12.6",
     "@babel/preset-env": "^7.12.7",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1",
     "nodemon": "^2.0.6"
   }
 }
