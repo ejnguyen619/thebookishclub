@@ -79,24 +79,24 @@ export default function SignUp() {
           {(error !== "" ? (<div className="error">{error}</div>) : "")}
           <div className='form-group'>
             <label htmlFor="name">Name: </label>
-            <input type="text" name="name" id='name' 
+            <input type="text" name="name" id='name' alt="name"
               onChange={e => setDetails({...details, name: e.target.value})} value={details.name}/>
           </div>
           <div className='form-group'>
             <label htmlFor="email">Email: </label>
             {(formErrors.email !== "" ? (<div className="error">{formErrors.email}</div>) : "")}
-            <input type="email" name="email" id='email'
+            <input type="email" name="email" id='email' alt="email"
               onChange={handleChange} value={details.email}/>
           </div>
           <div className='form-group'>
             <label htmlFor="password">Password: </label>
             {(formErrors.password !== "" ? (<div className="error">{formErrors.password}</div>) : "")}
-            <input type="password" name="password" id='password'
+            <input type="password" name="password" id='password' alt="password"
               onChange={handleChange} value={details.password}/>
           </div>
           <div className='form-group'>
             <label htmlFor="confirm">Confirm Password: </label>
-            <input type="password" name="confirm" id='confirm'
+            <input type="password" name="confirm" id='confirm' alt="confirm"
               onChange={handleChange} value={details.confirm}/>
           </div>
           <input type='submit' value='SIGN UP' />

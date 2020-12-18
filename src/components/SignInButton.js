@@ -7,7 +7,7 @@ export function SignInButton() {
   const { t } = useTranslation();
   return (
     <Link to='/sign-in'>
-      <button className='btn'>
+      <button className='btn' data-testid="main">
         {t("sign_in")}
       </button>
     </Link>
